@@ -24,10 +24,10 @@ module.exports = {
         enforce: 'pre'
       },
       {
-        test: /\.(css|scss)$/,
+        test: /\.css$/,
         loaders: ExtractTextPlugin.extract({
           fallback: 'style-loader',
-          use: 'css-loader?minimize!sass-loader!postcss-loader'
+          use: 'css-loader?minimize!postcss-loader'
         })
       },
       {

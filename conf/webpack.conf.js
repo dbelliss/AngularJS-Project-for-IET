@@ -22,11 +22,10 @@ module.exports = {
         enforce: 'pre'
       },
       {
-        test: /\.(css|scss)$/,
+        test: /\.css$/,
         loaders: [
           'style-loader',
           'css-loader',
-          'sass-loader',
           'postcss-loader'
         ]
       },
