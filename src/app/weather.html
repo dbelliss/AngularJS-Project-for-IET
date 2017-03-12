@@ -1,12 +1,15 @@
 
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
 
 <h1>{{$ctrl.hello}}</h1>
-<h1>{{$ctrl.hello2}}</h1>
-
+<h2>The weather in {{$ctrl.cityName}} is: </h2>
 <ul>
     <li ng-repeat="forecast in $ctrl.weatherList.list">
-        <span>{{forecast.deg}}</span>
-        <p>{{forecast.clouds}}</p>
+        <span><img ng-src={{forecast.image}}></span> --> -->
+        <p> {{forecast.image}} </p>
+        <span>Max: {{(1.8 * (forecast.temp.max - 273) + 32) | number: 0}}</span>
+        <span>Min: {{(1.8 * (forecast.temp.min - 273) + 32) | number: 0}}</span>
+        
     </li>
 </ul>
 <h2>End of forecast</h2>
