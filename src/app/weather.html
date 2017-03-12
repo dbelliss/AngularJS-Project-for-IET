@@ -1,12 +1,14 @@
-<h1>The weather in {{$ctrl.cityName}} is: </h1>
-<md-list>
-    <md-list-item class="md-primary" ng-repeat="forecast in $ctrl.weatherList.list">
-            <img class= "md-avatar" ng-src={{forecast.image}} alt={{forecast.image}}>
-            <div class="md-list-item-text" layout="column">
-                <h3>Max: {{(1.8 * (forecast.temp.max - 273) + 32) | number: 0}}</h3>
-                <h4>Min: {{(1.8 * (forecast.temp.min - 273) + 32) | number: 0}}</h4>
-                <md-divider></md-divider>
-            </div>
-    </md-list-item>
-</md-list>
-<h2>End of forecast</h2>
+
+<div id='weather'>
+    <h1>The weather in {{$ctrl.cityName}} is: </h1>
+    <md-list>
+        <md-list-item class="md-primary" ng-repeat="forecast in $ctrl.weatherList.list">
+                <img class= "md-avatar" ng-src={{forecast.image}} alt={{forecast.image}}>
+                <div class="md-list-item-text" layout="column">
+                    <h3>Max: {{(1.8 * (forecast.temp.max - 273) + 32) | number: 0}}</h3>
+                    <h4>Min: {{(1.8 * (forecast.temp.min - 273) + 32) | number: 0}}</h4>
+                    <md-divider></md-divider>
+                </div>
+        </md-list-item>
+    </md-list>
+</div>

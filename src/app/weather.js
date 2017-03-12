@@ -1,3 +1,5 @@
+import './weather.css';
+
 export const weather = {
   template: require('./weather.html'),
   controller($log, $http) {

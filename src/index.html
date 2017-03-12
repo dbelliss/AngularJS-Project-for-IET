@@ -18,18 +18,29 @@
   </head>
 
   <body ng-app="app" ng-controller="AppController as vm">
-    <weather>Loading...</weather>
-    <p> dshajkdhsjalk</p>
-    dsads
-    <div class="md-primary">
-      <span>dsjadaslk</span>
+    <div layout="row">
+      <div flex>
+        <weather class="weather">Loading...</weather>
+      </div>
+      <div flex>
+        <weather class="weather">Loading...</weather>
+      </div>
+    </div>
+    <div layout="column">
+      <div flex>
+        <weather class="weather">Loading...</weather>
+      </div>
+      <div flex>
+        <weather class="weather">Loading...</weather>
+      </div>
     </div>
 
-    <div>
+
+<!--     <div>
       <md-button class="md-primary">I will be blue (by default)</md-button>
     </div>
-    <md-button class="md-primary" ng-click="vm.acceptOffer(vm);"> Accept </md-button>
-    <md-button class="md-raised md-accent">
+    <md-button class="md-primary" ng-click="vm.acceptOffer(vm);"> Accept </md-button> -->
+ <!--    <md-button class="md-raised md-accent">
       <span>dsa</span>
     </md-button>
     <article >
@@ -37,6 +48,6 @@
       <ul ng-repeat="c in vm.customers">
         <li>{{c.name}}</li>
       </ul>
-    </article>
+    </article> -->
   </body>
 </html>
