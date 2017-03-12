@@ -4,13 +4,14 @@
   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+   <link rel="stylesheet" href="client/bower_components/angular-material/angular-material.css">
 
   <!-- Angular Material Library -->
   <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
 
 <h1>The weather in {{$ctrl.cityName}} is: </h1>
 <md-list>
-    <md-list-item ng-click="null" ng-repeat="forecast in $ctrl.weatherList.list">
+    <md-list-item ng-repeat="forecast in $ctrl.weatherList.list">
             <img class="md-avatar" ng-src={{forecast.image}} alt={{forecast.image}}>
             <div class="md-list-item-text" layout="column">
                 <h3>Max: {{(1.8 * (forecast.temp.max - 273) + 32) | number: 0}}</h3>

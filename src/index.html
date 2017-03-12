@@ -2,6 +2,8 @@
 <html>
   <head>
   <!-- Angular Material requires Angular.js Libraries -->
+   <link rel="stylesheet" href="client/bower_components/angular-material/angular-material.css">
+
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
@@ -15,8 +17,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="./app/images/uc-davis-logo.png">
   </head>
-
   <body ng-app="app" controller="myCtrl">
     <weather>Loading...</weather>
+    <p> dshajkdhsjalk</p>
+    dsads
+    <script type="text/javascript">
+      angular.module('app', ['ngMaterial'])
+.config(function($mdThemingProvider) {
+  $mdThemingProvider.theme('default')
+    .dark();
+});
+
+    </script>
   </body>
 </html>
