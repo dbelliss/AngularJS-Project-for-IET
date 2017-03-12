@@ -1,1 +1,12 @@
-<h1>{{ $ctrl.weatherHello }}</h1>
+
+
+<h1>{{$ctrl.hello}}</h1>
+<h1>{{$ctrl.hello2}}</h1>
+
+<ul>
+    <li ng-repeat="forecast in $ctrl.weatherList.list">
+        <span>{{forecast.deg}}</span>
+        <p>{{forecast.clouds}}</p>
+    </li>
+</ul>
+<h2>End of forecast</h2>

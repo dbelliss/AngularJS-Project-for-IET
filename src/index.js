@@ -1,6 +1,6 @@
 import angular from 'angular';
 
-import {hello} from './app/hello';
+import {weather} from './app/weather';
 import {test} from './app/test';
 import './index.css';
 
@@ -8,5 +8,5 @@ export const app = 'app';
 
 angular
   .module(app, [])
-  .component('app2', hello)
+  .component('app2', weather)
   .component('app3', test);
