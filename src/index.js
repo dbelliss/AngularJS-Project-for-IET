@@ -6,9 +6,19 @@ export const app = 'app';
 /*  eslint angular/di: [2,"array"]    */
 angular
   .module(app, ['ngMaterial'])
+  .controller('AppController', [function () {
+    const vm = this;
+    vm.customers = [
+      {name: 'Haley'}, {name: 'Ella'}, {name: 'Landon'}, {name: 'John'}
+    ];
+    vm.acceptOffer = function (vm) {
+      vm.customers = [];
+    };
+  }])
   .config(['$mdThemingProvider', function ($mdThemingProvider) {
     $mdThemingProvider.theme('default')
-    .dark();
+    .dark()
+    .primaryPalette('teal'); // specify primary color, all
   }])
   .component('weather', weather)
   .component('app3', test);
