@@ -1,15 +1,22 @@
 
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
+  <!-- Angular Material Library -->
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
 
-<h1>{{$ctrl.hello}}</h1>
-<h2>The weather in {{$ctrl.cityName}} is: </h2>
-<ul>
-    <li ng-repeat="forecast in $ctrl.weatherList.list">
-        <span><img ng-src={{forecast.image}}></span> --> -->
-        <p> {{forecast.image}} </p>
-        <span>Max: {{(1.8 * (forecast.temp.max - 273) + 32) | number: 0}}</span>
-        <span>Min: {{(1.8 * (forecast.temp.min - 273) + 32) | number: 0}}</span>
-        
-    </li>
-</ul>
+  <!-- Angular Material Library -->
+  <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+
+<h1>The weather in {{$ctrl.cityName}} is: </h1>
+<md-list>
+    <md-list-item ng-click="null" ng-repeat="forecast in $ctrl.weatherList.list">
+            <img class="md-avatar" ng-src={{forecast.image}} alt={{forecast.image}}>
+            <div class="md-list-item-text" layout="column">
+                <h3>Max: {{(1.8 * (forecast.temp.max - 273) + 32) | number: 0}}</h3>
+                <h4>Min: {{(1.8 * (forecast.temp.min - 273) + 32) | number: 0}}</h4>
+                <md-divider></md-divider>
+            </div>
+    </md-list-item>
+</md-list>
 <h2>End of forecast</h2>

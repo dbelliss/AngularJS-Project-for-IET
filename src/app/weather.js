@@ -16,6 +16,11 @@ export const weather = {
         $log.log(rootThis.weatherList.list[i].image);
       }
     };
-    $http.get('http://api.openweathermap.org/data/2.5/forecast/daily?id=5341704&cnt=2&APPID=b35f2b4ea7c48895bd3d4e23d86e733e').then(this.successCallback, this.successCallback);
+    $http.get('http://api.openweathermap.org/data/2.5/forecast/daily?id=5341704&cnt=7&APPID=b35f2b4ea7c48895bd3d4e23d86e733e').then(this.successCallback, this.successCallback);
+  },
+  config($mdThemingProvider) {
+    $mdThemingProvider.theme('default')
+    .primaryPalette('pink')
+    .accentPalette('orange');
   }
 };
