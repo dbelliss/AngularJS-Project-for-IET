@@ -1,8 +1,10 @@
 import './weather.css';
-
+/*  eslint prefer-const: "off"  */
+/*  eslint angular/module-getter: "off"  */
+/*  eslint object-shorthand: "off"  */
 export const weather = {
   template: require('./weather.html'),
-  controller($log, $http) {
+  controller: function ($log, $http) {
     this.hello = 'Hello World!';
     this.hello2 = 'Hello World2!';
     this.cityName = '';
@@ -19,5 +21,15 @@ export const weather = {
       }
     };
     $http.get('http://api.openweathermap.org/data/2.5/forecast/daily?id=5341704&cnt=7&APPID=b35f2b4ea7c48895bd3d4e23d86e733e').then(this.successCallback, this.successCallback);
-  }
+  },
+  factory: ('notify', ['$window', function (win) {
+    let msgs = [];
+    return function (msg) {
+      msgs.push(msg);
+      if (msgs.length === 3) {
+        win.alert(msgs.join('\n'));
+        msgs = [];
+      }
+    };
+  }])
 };

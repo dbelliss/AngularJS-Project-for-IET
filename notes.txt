@@ -25,3 +25,5 @@ controller creates variables in the scope
 templates written in .html files
 
 npm install -g @angular/cli
+
+By default, components use $ctrl

@@ -1,6 +1,6 @@
 
 <div id='weather'>
-    <h1>The weather in {{$ctrl.cityName}} is: </h1>
+    <h1>The weather in {{$ctrl.cityName}} is {{$ctrl.hello}}: </h1>
     <md-list>
         <md-list-item class="md-primary" ng-repeat="forecast in $ctrl.weatherList.list">
                 <img class= "md-avatar" ng-src={{forecast.image}} alt={{forecast.image}}>
@@ -12,3 +12,5 @@
         </md-list-item>
     </md-list>
 </div>
+
+

@@ -4,18 +4,19 @@ import {test} from './app/test';
 import {credits} from './app/credits';
 import './index.css';
 export const app = 'app';
-/*  eslint angular/di: [2,"array"]    */
+/*  eslint angular/di: "off"  */
+
 angular
   .module(app, ['ngMaterial'])
-  .controller('AppController', [function () {
-    // const vm = this;
-    // vm.customers = [
-    //   {name: 'Haley'}, {name: 'Ella'}, {name: 'Landon'}, {name: 'John'}
-    // ];
-    // vm.acceptOffer = function (vm) {
-    //   vm.customers = [];
-    // };
-  }])
+  .service('hexafy', function () {
+    this.myFunc = function (x) {
+      return x.toString(16);
+    };
+  })
+  .controller('AppController', function (hexafy) {
+    const vm = this;
+    vm.hex = hexafy.myFunc(255);
+  })
   .config(['$mdThemingProvider', function ($mdThemingProvider) {
     $mdThemingProvider.theme('default')
     .dark()
