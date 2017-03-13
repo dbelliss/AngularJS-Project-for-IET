@@ -1,6 +1,7 @@
 import angular from 'angular';
 import {weather} from './app/weather';
 import {test} from './app/test';
+import {credits} from './app/credits';
 import './index.css';
 export const app = 'app';
 /*  eslint angular/di: [2,"array"]    */
@@ -21,4 +22,5 @@ angular
     .primaryPalette('teal'); // specify primary color, all
   }])
   .component('weather', weather)
-  .component('app3', test);
+  .component('app3', test)
+  .component('credits', credits);
