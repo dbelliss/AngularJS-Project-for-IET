@@ -1,35 +1,10 @@
 import './weather.css';
-/*  eslint prefer-const: "off"  */
-/*  eslint angular/module-getter: "off"  */
-/*  eslint object-shorthand: "off"  */
+
 export const weather = {
   template: require('./weather.html'),
-  controller: function ($log, $http) {
-    this.hello = 'Hello World!';
-    this.hello2 = 'Hello World2!';
+  controller(weatherService) {
+    weatherService.getWeather(this);
     this.cityName = '';
     this.weatherList = [];
-    const rootThis = this;
-    this.successCallback = function (response) {
-      rootThis.cityName = angular.fromJson(response).data.city.name;
-      rootThis.weatherList = angular.fromJson(response).data;
-      $log.log(angular.fromJson(response).data);
-      for (let i = 0; i < rootThis.weatherList.list.length; i++) {
-        $log.log(i);
-        rootThis.weatherList.list[i].image = 'http://openweathermap.org/img/w/' + rootThis.weatherList.list[i].weather[0].icon + '.png';
-        $log.log(rootThis.weatherList.list[i].image);
-      }
-    };
-    $http.get('http://api.openweathermap.org/data/2.5/forecast/daily?id=5341704&cnt=7&APPID=b35f2b4ea7c48895bd3d4e23d86e733e').then(this.successCallback, this.successCallback);
-  },
-  factory: ('notify', ['$window', function (win) {
-    let msgs = [];
-    return function (msg) {
-      msgs.push(msg);
-      if (msgs.length === 3) {
-        win.alert(msgs.join('\n'));
-        msgs = [];
-      }
-    };
-  }])
+  }
 };
