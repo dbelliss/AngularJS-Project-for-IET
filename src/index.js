@@ -8,13 +8,13 @@ export const app = 'app';
 angular
   .module(app, ['ngMaterial'])
   .controller('AppController', [function () {
-    const vm = this;
-    vm.customers = [
-      {name: 'Haley'}, {name: 'Ella'}, {name: 'Landon'}, {name: 'John'}
-    ];
-    vm.acceptOffer = function (vm) {
-      vm.customers = [];
-    };
+    // const vm = this;
+    // vm.customers = [
+    //   {name: 'Haley'}, {name: 'Ella'}, {name: 'Landon'}, {name: 'John'}
+    // ];
+    // vm.acceptOffer = function (vm) {
+    //   vm.customers = [];
+    // };
   }])
   .config(['$mdThemingProvider', function ($mdThemingProvider) {
     $mdThemingProvider.theme('default')
