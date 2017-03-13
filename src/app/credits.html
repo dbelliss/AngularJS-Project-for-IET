@@ -1,7 +1,9 @@
     <footer>
         Powered by &nbsp;&nbsp;
         <span ng-repeat='path in $ctrl.images'>
-            <img class="icon" ng-src={{path}} alt='Angular material logo'> 
+            <a href={{$ctrl.source[$index]}}> 
+                <img class="icon" ng-src={{path}} alt={{path}}>
+            </a>
         </span>
     </footer>
 
