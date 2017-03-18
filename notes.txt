@@ -27,3 +27,53 @@ templates written in .html files
 npm install -g @angular/cli
 
 By default, components use $ctrl
+
+~~~~~~~~~~~~~
+
+icon = openweatherapi logo;
+actor.id = 0;
+actor.objectType = ‘department’;
+actor.displayName = ‘all’;
+actor.image.color = #ffffff
+actor.author = ‘Open Weather API’
+actor.author.id = 1;
+actor.author.displayName = ‘Open Weather’;
+verb = ‘post’;
+title = ‘Daily forecast’;
+generator = ‘Open Weather API’;
+generator.id = 2;
+object.ucdSrcld = x++;
+object.objectType = ‘notification’;
+object.content = ‘Conditions for the day’
+object.contentImage.dimensions.normal.width = 400px;
+object.contentImage.dimensions.normal.height = 300px;
+object.contentImage.dimensions.high.url = url????
+object.contentImage.dimensions.high.width = 650;
+object.contentImage.dimensions.high.height = 490;
+object.contentImage.source = ‘Open Weather API’;
+object.ucdEdusModel.event.location = ‘Davis’;
+object.ucdEdusModel.event.startDate = {{date}}THH:mm:ss.SSSZ;
+object.ucdEdusModel.event.isAllDay = true;
+object.location	 = ‘Davis’
+object.location.displayName = ‘Davis’
+object.location.geo.latitude = (string)38.5382
+object.location.geo.longitude = (string)121.7617
+object.location.geometry.type = ‘Point’;
+object.ucdEdusModel.event.hasStartTime = false;
+object.location.geometry.coordinates = Array of both
+to.id = ‘public’;
+to.g = true;
+to.i = false;
+published = curTime   // 2013-07-01T17:00:00.000Z
+ucdEdusMeta.labels = [‘weather’];
+ucdEdusMeta.startDate = {{date}}
+ucdEdusMeta.endDate = {{date + 1}}
+
+content = ‘the weather for the day’;
+
+
+
+~~~~~~~~~~~~~
+4. Add one day in advance on button press
+ADD SECURITY TO API KEY (ENVORINMENTAL VARIABLE)
+Look up how to declare submodules
