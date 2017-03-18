@@ -4,8 +4,8 @@
         <md-list-item class="md-primary" ng-repeat="forecast in $ctrl.weatherList.list">
                 <img class= "md-avatar" ng-src={{forecast.image}} alt={{forecast.image}}>
                 <div class="md-list-item-text" layout="column">
-                    <h3>Max: {{(1.8 * (forecast.temp.max - 273) + 32) | number: 0}}</h3>
-                    <h4>Min: {{(1.8 * (forecast.temp.min - 273) + 32) | number: 0}}</h4>
+                    <h3>Max: {{forecast.temp.max | number: 0}}</h3>
+                    <h4>Min: {{forecast.temp.min | number: 0}}</h4>
                     <md-divider></md-divider>
                 </div>
         </md-list-item>

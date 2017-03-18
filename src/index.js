@@ -20,7 +20,8 @@ angular
           // $log.log(rootThis.weatherList.list[i].image);
         }
     // Creating aggiefeed data to send
-        const data = {
+        $log.log(rootThis.weatherList.list[0].temp);
+        const activity = {
           icon: 'https://upload.wikimedia.org/wikipedia/commons/1/15/OpenWeatherMap_logo.png',
           actor: {
             objectType: 'department',
@@ -41,11 +42,11 @@ angular
           object: {
             ucdSrcld: 6,
             objectType: 'notification',
-            content: 'dsadsdsafdsfa',
+            content: 'The highest temperature will be ' + rootThis.weatherList.list[0].temp.max + '\n The lowest temperature will be ' + rootThis.weatherList.list[0].temp.min + '\nOverall, ' + rootThis.weatherList.list[0].weather[0].description,
             contentImage: {
               dimensions: {
                 normal: {
-                  url: 'dsafdsf',
+                  url: rootThis.weatherList.list[0].image,
                   width: 400,
                   height: 300
                 }
@@ -53,7 +54,7 @@ angular
               source: 'Open Weather'
             },
             ucdEdusModel: {
-              url: 'http://api.openweathermap.org/data/2.5/forecast/daily?id=5341704&cnt=7&APPID=b35f2b4ea7c48895bd3d4e23d86e733e',
+              url: 'http://api.openweathermap.org/data/2.5/forecast/daily?id=5341704&units=imperial&cnt=7&APPID=b35f2b4ea7c48895bd3d4e23d86e733e',
               urlDisplayName: 'Daily forecast for Davis',
               event: {
                 hasStartTime: false,
@@ -67,11 +68,11 @@ angular
               displayName: 'Davis',
               geo: {
                 latitude: '38.5382',
-                longitude: '121.7617'
+                longitude: '-121.7617'
               },
               geometry: {
                 type: 'Point',
-                coordinates: [121.7617, 38.5382]
+                coordinates: [-121.7617, 38.5382]
               }
             }
           },
@@ -86,9 +87,9 @@ angular
             endDate: 'dsahfjkdhsflkjhasfk'
           }
         };
-        $log.log(data);
+        $log.log(activity);
       };
-      $http.get('http://api.openweathermap.org/data/2.5/forecast/daily?id=5341704&cnt=7&APPID=b35f2b4ea7c48895bd3d4e23d86e733e').then(this.successCallback, this.successCallback);
+      $http.get('http://api.openweathermap.org/data/2.5/forecast/daily?id=5341704&cnt=7&units=imperial&APPID=b35f2b4ea7c48895bd3d4e23d86e733e').then(this.successCallback, this.successCallback);
     };
   })
   .controller('AppController', function () {
