@@ -13,14 +13,12 @@ angular
       this.successCallback = function (response) {
         rootThis.cityName = angular.fromJson(response).data.city.name;
         rootThis.weatherList = angular.fromJson(response).data;
-        $log.log(angular.fromJson(response).data);
         for (let i = 0; i < rootThis.weatherList.list.length; i++) {
           // $log.log(i);
           rootThis.weatherList.list[i].image = 'http://openweathermap.org/img/w/' + rootThis.weatherList.list[i].weather[0].icon + '.png';
           // $log.log(rootThis.weatherList.list[i].image);
         }
     // Creating aggiefeed data to send
-        $log.log(rootThis.weatherList.list[0].temp);
         const activity = {
           icon: 'https://upload.wikimedia.org/wikipedia/commons/1/15/OpenWeatherMap_logo.png',
           actor: {
