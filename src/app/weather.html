@@ -1,4 +1,5 @@
-<div id='weather'>
+<div id='weather' ng-app="weather">
+    <md-button class="md-primary" ng-click="$ctrl.update();"> Accept </md-button>
     <h1>The weather in {{$ctrl.cityName}} is {{$ctrl.hello}}: </h1>
     <md-list>
         <md-list-item class="md-primary" ng-repeat="forecast in $ctrl.weatherList.list">
