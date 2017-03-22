@@ -51,7 +51,7 @@ angular
               ucdSrcld: 6,
               objectType: 'notification',
               content: 'The highest temperature will be ' + rootThis.weatherList.list[i].temp.max + '°F.\n The lowest temperature will be ' + rootThis.weatherList.list[i].temp.min + '°F.\nOverall, ' + rootThis.weatherList.list[i].weather[0].description,
-              contentImage: { 
+              contentImage: {
                 dimensions: {
                   normal: {
                     url: rootThis.weatherList.list[i].image,
@@ -90,7 +90,7 @@ angular
               i: false
             },
             ucdEdusMeta: {
-              labels: ['~campus-messages','weather'],
+              labels: ['~campus-messages', 'weather'],
               startDate: date,
               endDate: date
             }
