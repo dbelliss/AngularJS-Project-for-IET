@@ -2,7 +2,7 @@
     <md-button class="md-primary" ng-click="$ctrl.update();"> Get New Data </md-button>
     <md-list>
         <md-list-item class="md-primary" ng-repeat="activity in $ctrl.activities">
-                <img class= "md-avatar" ng-src={{activity.icon}} alt='Open weather API logo'>
+                <i class="icon-pencil"> test</i>
                 <img class= "md-avatar" ng-src={{activity.object.contentImage.dimensions.normal.url}} alt={{activity.image}}>
                 <div class="md-list-item-text" layout="column">
                     <div ng-date></div>
