@@ -2,11 +2,11 @@
     <md-button class="md-primary" ng-click="$ctrl.update();"> Get New Data </md-button>
     <md-list>
         <md-list-item class="md-primary" ng-repeat="activity in $ctrl.activities">
-                <i class="icon-pencil"> test</i>
                 <img class= "md-avatar" ng-src={{activity.object.contentImage.dimensions.normal.url}} alt={{activity.image}}>
                 <div class="md-list-item-text" layout="column">
                     <div ng-date></div>
-                    <h2>{{activity.object.location.displayName}} {{activity.title}}</h2>
+                    <h2> <i class="glyphicon glyphicon-calendar"></i>   {{activity.object.location.displayName}} {{activity.title}} 
+                    </h2>
                     <div class ='forecast'> 
                         <p>
                             <br>
