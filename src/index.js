@@ -6,8 +6,16 @@ import './index.css';
 export const app = 'app';
 /*  eslint angular/di: "off"  */
 /* eslint no-unused-vars: "off" */
+/* eslint prefer-arrow-callback: "off" */
+
 angular
   .module(app, ['ngMaterial'])
+  .directive('ngTest', function ($log) {
+    return {
+      restrict: 'A',
+      template: '<h5>Humidity: {{forecast.humidity}}%</h5>'
+    };
+  })
   .service('weatherService', function ($http, $log) {
     this.getWeather = function (rootThis) {
       this.successCallback = function (response) {
