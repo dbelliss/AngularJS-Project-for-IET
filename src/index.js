@@ -22,9 +22,8 @@ angular
         rootThis.cityName = angular.fromJson(response).data.city.name;
         rootThis.weatherList = angular.fromJson(response).data;
         for (let i = 0; i < rootThis.weatherList.list.length; i++) {
-          // $log.log(i);
-          rootThis.weatherList.list[i].image = 'http://openweathermap.org/img/w/' + rootThis.weatherList.list[i].weather[0].icon + '.png';
-          // $log.log(rootThis.weatherList.list[i].image);
+          rootThis.weatherList.list[i].image = 'http://openweathermap.org/img/w/' +
+            rootThis.weatherList.list[i].weather[0].icon + '.png';
         }
     // Creating aggiefeed data to send
         const activity = {
@@ -108,5 +107,4 @@ angular
     .primaryPalette('teal'); // specify primary color, all
   }])
   .component('weather', weather)
-  .component('app3', test)
   .component('credits', credits);
