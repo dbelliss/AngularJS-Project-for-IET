@@ -1,12 +1,18 @@
 <div id='weather' ng-app="weather">
     <md-button class="md-primary" ng-click="$ctrl.update();"> Get New Data </md-button>
     <md-list>
-        <md-list-item class="md-primary" ng-repeat="forecast in $ctrl.weatherList.list">
-                <img class= "md-avatar" ng-src={{forecast.image}} alt={{forecast.image}}>
+        <md-list-item class="md-primary" ng-repeat="activity in $ctrl.activities">
+                <img class= "md-avatar" ng-src={{activity.icon}} alt='Open weather API logo'>
+                <img class= "md-avatar" ng-src={{activity.object.contentImage.dimensions.normal.url}} alt={{activity.image}}>
                 <div class="md-list-item-text" layout="column">
-                    <div ng-test></div>
-                    <h3>Max: {{forecast.temp.max | number: 0}}</h3>
-                    <h3>Min: {{forecast.temp.min | number: 0}}</h4>
+                    <div ng-date></div>
+                    <h2>{{activity.object.location.displayName}} {{activity.title}}</h2>
+                    <div class ='forecast'> 
+                        <p>
+                            <br>
+                            {{activity.object.content}}  
+                        </p>
+                    </div>
                     <md-divider></md-divider>
                 </div>
         </md-list-item>

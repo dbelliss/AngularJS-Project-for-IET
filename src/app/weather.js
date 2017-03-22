@@ -7,11 +7,13 @@ export const weather = {
     this.cityName = '';
     this.weatherList = [];
     this.x = 0;
+    this.activities = [];
     this.update = function () {
       $log.log('hi');
-      const temp = angular.copy(this.weatherList.list[0]);
-      temp.temp.max = this.x++;
-      this.weatherList.list.unshift(temp);
+      $log.log(this.activities);
+      const temp = angular.copy(this.activities[0]);
+      // temp.temp.max = this.x++;
+      this.activities.unshift(temp);
     };
   }
 };
